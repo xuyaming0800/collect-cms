@@ -1,0 +1,436 @@
+<!--姬昂修改，将个数放到最上面-->
+<div class="form-group">
+        <label for="_latticeCellNum" class="col-sm-2 control-label">个数</label>
+        <div class="col-sm-10">
+                <select class="form-control" id="_latticeCellNum"
+                        name="_latticeCellNum">
+                        <option value="1"<%if(_latticeCellNum == "1"){%> selected
+                                <%}%>>1</option>
+                        <option value="2"<%if(_latticeCellNum == "2"){%> selected
+                                <%}%>>2</option>
+                        <option value="3"<%if(_latticeCellNum == "3"){%> selected
+                                <%}%>>3</option>
+                        <option value="4"<%if(_latticeCellNum == "4"){%> selected
+                                <%}%>>4</option>
+                </select>
+        </div>
+</div>
+<div class="form-group">
+	<label for="_required" class="col-sm-2 control-label">是否必须</label>
+	<div class="col-sm-10">
+		<textarea rows="3" id="_required" name="_required" placeholder="Required"><%if(_required){%><%=_required%><%}%></textarea>
+		<p>
+			这是针对每个元素的Required，请依次选择
+			将自动换行进行分隔。
+		</p>
+	</div>
+</div>
+<!-- <div class="form-group">
+	<label for="_id" class="col-sm-2 control-label">ID</label>
+	<div class="col-sm-10">
+		<textarea rows="3" id="_id" name="_id" placeholder="ID"><%if(_id){%><%=_id%><%}%></textarea>
+		<p>
+			这是针对每个元素的ID，请使用
+			<kbd>Enter</kbd>
+			进行分隔。
+		</p>
+	</div>
+</div> -->
+<div class="form-group">
+	<label for="_name" class="col-sm-2 control-label">Name</label>
+	<div class="col-sm-10">
+		<textarea rows="3" id="_name" name="_name" placeholder="Name"><%if(_name){%><%=_name%><%}%></textarea>
+		<p>
+			这是针对每个元素的Name，请使用
+			<kbd>Enter</kbd>
+			进行分隔。
+		</p>
+	</div>
+</div>
+<!-- <div class="form-group">
+	<label for="_index" class="col-sm-2 control-label">Index</label>
+	<div class="col-sm-10">
+		<textarea rows="3" id="_index" name="_index" placeholder="顺序"><%if(_index){%><%=_index%><%}%></textarea>
+		<p>
+			这是针对每个元素的Index，请使用
+			<kbd>Enter</kbd>
+			进行分隔。
+		</p>
+	</div>
+</div> -->
+<div class="form-group">
+	<label for="_gpsType" class="col-sm-2 control-label">GpsType</label>
+	<div class="col-sm-10">
+		<textarea rows="3" id="_gpsType" name="_gpsType" placeholder="Gps类型"><%if(_gpsType){%><%=_gpsType%><%}%></textarea>
+		<p>
+			这是针对每个元素的GpsType，请依次选择
+			将自动换行进行分隔。
+		</p>
+	</div>
+</div>
+<div class="form-group">
+	<label for="_imgSize" class="col-sm-2 control-label">照片质量</label>
+	<div class="col-sm-10">
+		<textarea rows="3" id="_imgSize" name="_imgSize" placeholder="照片质量"><%if(_imgSize){%><%=_imgSize%><%}%></textarea>
+		<p>
+			这是针对每个元素的照片质量，请依次选择
+			将自动换行进行分隔。
+		</p>
+	</div>
+</div>
+<div class="form-group">
+	<label for="_explain" class="col-sm-2 control-label">说明</label>
+	<div class="col-sm-10">
+		<textarea rows="3" id="_explain" name="_explain" placeholder="说明"><%if(_explain){%><%=_explain%><%}%></textarea>
+		<p>
+			这是针对每个图片下方的说明，请使用
+			<kbd>Enter</kbd>
+			进行分隔。
+		</p>
+	</div>
+</div>
+<div class="form-group">
+	<label for="_index" class="col-sm-2 control-label">起始位置</label>
+	<div class="col-sm-10">
+		<input type="text" class="form-control" id="_id"
+			name="_id"
+			value="<%if(_id){%><%=_id%><%}%>"
+			placeholder="只能为数字">
+	</div>
+</div>
+<!-- <div class="form-group">
+	<label for="_callbackMsg" class="col-sm-2 control-label">回调消息</label>
+	<div class="col-sm-10">
+		<input type="text" class="form-control" id="_callbackMsg"
+			name="_callbackMsg"
+			value="<%if(_callbackMsg){%><%=_callbackMsg%><%}%>"
+			placeholder="回调消息">
+	</div>
+</div> -->
+<div class="form-group">
+	<label for="_successMgs" class="col-sm-2 control-label">定位成功消息</label>
+	<div class="col-sm-10">
+		<input type="text" class="form-control" id="_successMgs"
+			name="_successMgs"
+			value="<%if(_successMgs){%><%=_successMgs%><%}%>"
+			placeholder="定位成功消息">
+	</div>
+</div>
+<div class="form-group">
+	<label for="_failMgs" class="col-sm-2 control-label">定位失败消息</label>
+	<div class="col-sm-10">
+		<input type="text" class="form-control" id="_failMgs"
+			name="_failMgs"
+			value="<%if(_failMgs){%><%=_failMgs%><%}%>"
+			placeholder="定位失败消息">
+	</div>
+</div>
+<div class="form-group">
+	<label for="_fontSize" class="col-sm-2 control-label">字体大小</label>
+	<div class="col-sm-10">
+		<select class="form-control" name="_fontSize"  id="_fontSize" >
+			<option value="10" <%if(_fontSize == "10"){%> selected <%}%>>10</option>
+			<option value="20" <%if(_fontSize == "20"){%> selected <%}%>>20</option>
+			<option value="30" <%if(_fontSize == "30"){%> selected <%}%>>30</option>
+			<option value="40" <%if(_fontSize == "40"){%> selected <%}%>>40</option>
+			<option value="50" <%if(_fontSize == "50"){%> selected <%}%>>50</option>
+			<option value="60" <%if(_fontSize == "60"){%> selected <%}%>>60</option>
+			<option value="70" <%if(_fontSize == "70"){%> selected <%}%>>70</option>
+		</select>
+	</div>
+</div>
+<div class="form-group">
+	<label for="_padding" class="col-sm-2 control-label" >内边距</label>
+	<div class="col-sm-10">
+		<select class="form-control" name="_padding"  id="_padding"  >
+			<option value="1" <%if(_padding == "1"){%> selected <%}%>>1</option>
+			<option value="2" <%if(_padding == "2"){%> selected <%}%>>2</option>
+			<option value="3" <%if(_padding == "3"){%> selected <%}%>>3</option>
+			<option value="4" <%if(_padding == "4"){%> selected <%}%>>4</option>
+			<option value="5" <%if(_padding == "5"){%> selected <%}%>>5</option>
+			<option value="6" <%if(_padding == "6"){%> selected <%}%>>6</option>
+			<option value="7" <%if(_padding == "7"){%> selected <%}%>>7</option>
+		</select>
+	</div>
+</div>
+<div class="form-group">
+	<label for="_shape" class="col-sm-2 control-label">Shape</label>
+	<div class="col-sm-10">
+		<textarea rows="3" id="_shape" name="_shape" placeholder="Shape"><%if(_shape){%><%=_shape%><%}%></textarea>
+		<p>
+			这是针对每个元素的Shape，1表示使用Shape，0表示不使用，请使用
+			<kbd>Enter</kbd>
+			进行分隔。
+		</p>
+	</div>
+</div>
+
+<div class="form-group">
+	<label for="_repeat" class="col-sm-2 control-label">排重</label>
+	<div class="col-sm-10">
+		<textarea rows="3" id="_repeat" name="_repeat" placeholder="Repeat"><%if(_repeat){%><%=_repeat%><%}%></textarea>
+		<p>
+			这是针对每个元素的排重选择，1表示使用排重，0表示不使用，请使用
+			<kbd>Enter</kbd>
+			进行分隔。
+		</p>
+	</div>
+</div>
+
+<div class="form-group">
+	<label for="_repeatDistance" class="col-sm-2 control-label">排重距离</label>
+	<div class="col-sm-10">
+		<textarea rows="3" id="_repeatDistance" name="_repeatDistance" placeholder="RepeatDistance"><%if(_repeatDistance){%><%=_repeatDistance%><%}%></textarea>
+		<p>
+			这是针对每个元素的排重距离，单位为米，填写大于零的整数，请使用
+			<kbd>Enter</kbd>
+			进行分隔。
+		</p>
+	</div>
+</div>
+
+<!--
+<div class="form-group">
+	<label for="_latticeCellNum" class="col-sm-2 control-label">个数</label>
+	<div class="col-sm-10">
+		<select class="form-control" id="_latticeCellNum"
+			name="_latticeCellNum">
+			<option value="1"<%if(_latticeCellNum == "1"){%> selected
+				<%}%>>1</option>
+			<option value="2"<%if(_latticeCellNum == "2"){%> selected
+				<%}%>>2</option>
+			<option value="3"<%if(_latticeCellNum == "3"){%> selected
+				<%}%>>3</option>
+			<option value="4"<%if(_latticeCellNum == "4"){%> selected
+				<%}%>>4</option>
+		</select>
+	</div>
+</div>
+-->
+<script type="text/javascript">
+var rFlag,gFlag,iFlag//true为聚焦，false为不聚焦
+//获取textarea光标位置
+(function($, undefined) {
+		    $.fn.getCursorPosition = function() {
+		        var el = $(this).get(0);
+		        var pos = 0;
+		        if ('selectionStart' in el) {
+		            pos = el.selectionStart;
+		        } else if ('selection' in document) {
+		            el.focus();
+		            var Sel = document.selection.createRange();
+		            var SelLength = document.selection.createRange().text.length;
+		            Sel.moveStart('character', -el.value.length);
+		            pos = Sel.text.length - SelLength;
+		        }
+		        return pos;
+		    }
+		})(jQuery);
+
+$(function() {
+	initRequired();
+	initGpsType();
+	initImgSize();
+	initFocusOrBlur("_required",rFlag);
+	initFocusOrBlur("_gpsType",gFlag);
+	initFocusOrBlur("_imgSize",iFlag);
+	
+	
+	$(document).keydown(function(event){
+			if(event.keyCode == 8){
+				if(rFlag) {
+					delRow("_required")
+				}else if(gFlag){
+					delRow("_gpsType")
+				}else if(iFlag){
+					delRow("_imgSize")
+				}
+			}
+			if(rFlag || gFlag || iFlag) {
+				event.preventDefault();
+			}
+			
+	});
+	
+});
+//新增内容
+function saveData(id,selectId) {
+	var selectValue = $("#"+selectId+"").val();//下拉框选中值
+	var value = $("#"+id+"").val();
+	var length = value.length;
+	var position = $("#"+id+"").getCursorPosition();
+	if(position == 0) {//开始位置，为替换当前行
+		var enterEnd = value.indexOf("\n");
+		$("#"+id+"").val(selectValue+value.substring(enterEnd,length));
+	}else if(position == length ) {//结束位置，添加新行
+		$("#"+id+"").val(value+"\n"+selectValue);
+	}else {
+		var valueStart = value.substring(0,position);
+		var valueEnd = value.substring(position,length);
+		var enterStart = valueStart.lastIndexOf("\n");
+		var enterEnd = valueEnd.indexOf("\n");
+		if(enterStart == -1 && enterEnd == -1) {//只有一行
+			$("#"+id+"").val(selectValue);
+		}else if(enterStart == -1) {//处在第一行中
+			$("#"+id+"").val(selectValue+valueEnd.substring(enterEnd,valueEnd.length));
+		}else if(enterEnd == -1){//处在最后一行
+			$("#"+id+"").val(valueStart.substring(0,enterStart)+"\n"+selectValue);
+		}else {
+			$("#"+id+"").val(valueStart.substring(0,enterStart)+"\n"+selectValue+valueEnd.substring(enterEnd,valueEnd.length));
+		}
+		
+	}
+}
+//删除textarea行内容
+function delRow(id) {
+	var value = $("#"+id+"").val();
+	var length = value.length;
+	var position = $("#"+id+"").getCursorPosition();
+	if(position == 0) {//开始位置，不做处理
+	}else {
+		var valueStart = value.substring(0,position);
+		var valueEnd = value.substring(position,length);
+		var enterStart = valueStart.lastIndexOf("\n");
+		var enterEnd = valueEnd.indexOf("\n");
+		if(enterStart == -1 && enterEnd == -1) {//只有一行
+			$("#"+id+"").val("");
+		}else if(enterStart == -1) {//处在第一行中
+			$("#"+id+"").val(valueEnd.substring(enterEnd+1,valueEnd.length));
+		}else if(enterEnd == -1){//处在最后一行
+			$("#"+id+"").val(valueStart.substring(0,enterStart));
+		}else {
+			$("#"+id+"").val(valueStart.substring(0,enterStart)+valueEnd.substring(enterEnd,valueEnd.length));
+		}
+	}
+}
+//初始化聚焦和失去焦点事件
+function initFocusOrBlur(id) {
+	$("#"+id+"").focus(function() {
+		if(id == "_required") {
+			rFlag = true;
+		}else if(id == "_gpsType") {
+			gFlag = true;
+		}else if(id == "_imgSize"){
+		    iFlag = true;
+		}
+	});
+	
+	$("#"+id+"").blur(function() {
+		if(id == "_required") {
+			rFlag = false;
+		}else if(id == "_gpsType") {
+			gFlag = false;
+		}else if(id == "_imgSize"){
+		    iFlag = false;
+		}
+	});
+}
+
+function initRequired() {
+	var divT = $("<div></div>");
+	var divR = $("<div class=\"form-group\"></div>");
+	var divF = $("<div class=\"col-sm-12\"></div>");
+	var selectR = $("<select class=\"form-control\" name=\"_requiredSelect\"  id=\"_requiredSelect\"  ></select>");
+	var optionR1 = $("<option value=\"required\" >必选</option>");
+	var optionR2 = $("<option value=\"unrequired\" >非必选</option>");
+	selectR.append(optionR1);
+	selectR.append(optionR2);
+	divF.append(selectR);
+	divR.append(divF);
+	var divbR = $("<div class=\"form-group text-center \"></div>");
+	var btn1 = $("<button type=\"button\" class=\"btn btn-success\">保&nbsp;&nbsp;存</button>");
+	var btn2 = $("<button type=\"button\" class=\"btn btn-danger\">取&nbsp;&nbsp;消</button>");
+	bindBtnClick(btn1,"_required","_requiredSelect","save");
+	bindBtnClick(btn2,"_required","","cancel");
+	divbR.append(btn1);
+	divbR.append(btn2);
+	divT.append(divR);
+	divT.append(divbR);
+	$("#_required").popover({
+			html : true,
+			title : '选择是否必须',
+			template : '<div class="popover" style="max-width:900px" role="tooltip"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content"></div></div>',
+			content : divT
+	});
+}
+
+function initGpsType() {
+	var divT = $("<div></div>");
+	var divG = $("<div class=\"form-group\"></div>");
+	var divF = $("<div class=\"col-sm-12\"></div>");
+	var selectG = $("<select class=\"form-control\" name=\"_gpsTypeSelect\"  id=\"_gpsTypeSelect\"  ></select>");
+	var optionG1 = $("<option value=\"TypeHighAccuracy \" >高精度定位</option>");
+	var optionG2 = $("<option value=\"TypeGpsLocation\" >仅使用设备定位</option>");
+	var optionG3 = $("<option value=\"TypeNetWorkWF \" >网络和基站定位</option>");
+	selectG.append(optionG1);
+	selectG.append(optionG2);
+	selectG.append(optionG3);
+	divF.append(selectG);
+	divG.append(divF);
+	var divbG = $("<div class=\"form-group text-center \"></div>");
+	var btn1 = $("<button type=\"button\" class=\"btn btn-success\">保&nbsp;&nbsp;存</button>");
+	var btn2 = $("<button type=\"button\" class=\"btn btn-danger\">取&nbsp;&nbsp;消</button>");
+	bindBtnClick(btn1,"_gpsType","_gpsTypeSelect","save");
+	bindBtnClick(btn2,"_gpsType","","cancel");
+	divbG.append(btn1);
+	divbG.append(btn2);
+	divT.append(divG);
+	divT.append(divbG);
+	$("#_gpsType").popover({
+			html : true,
+			title : '选择GPS类型',
+			template : '<div class="popover" style="max-width:900px" role="tooltip"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content"></div></div>',
+			content : divT
+	});
+}
+
+function initImgSize() {
+	var divT = $("<div></div>");
+	var divG = $("<div class=\"form-group\"></div>");
+	var divF = $("<div class=\"col-sm-12\"></div>");
+	var selectG = $("<select class=\"form-control\" name=\"_imgSizeSelect\"  id=\"_imgSizeSelect\"  ></select>");
+	var optionG1 = $("<option value=\"HEIGHT \" >高质量</option>");
+	var optionG2 = $("<option value=\"CENTER\" selected>普通质量</option>");
+	var optionG3 = $("<option value=\"LOW \" >低质量</option>");
+	selectG.append(optionG1);
+	selectG.append(optionG2);
+	selectG.append(optionG3);
+	divF.append(selectG);
+	divG.append(divF);
+	var divbG = $("<div class=\"form-group text-center \"></div>");
+	var btn1 = $("<button type=\"button\" class=\"btn btn-success\">保&nbsp;&nbsp;存</button>");
+	var btn2 = $("<button type=\"button\" class=\"btn btn-danger\">取&nbsp;&nbsp;消</button>");
+	bindBtnClick(btn1,"_imgSize","_imgSizeSelect","save");
+	bindBtnClick(btn2,"_imgSize","","cancel");
+	divbG.append(btn1);
+	divbG.append(btn2);
+	divT.append(divG);
+	divT.append(divbG);
+	$("#_imgSize").popover({
+			html : true,
+			title : '选择照片质量',
+			template : '<div class="popover" style="max-width:900px" role="tooltip"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content"></div></div>',
+			content : divT
+	});
+}
+
+//绑定单击事件
+function bindBtnClick(obj,id,selectId,type) {
+	if(type == "save") {
+		obj.click(function() {
+			saveData(id,selectId);
+			hidePopover(id);
+		});
+	}else if(type == "cancel") {
+		obj.click(function() {
+			hidePopover(id);
+		});
+	}
+	
+}
+
+//取消
+function hidePopover(id) {
+	$("#"+id+"").popover("hide");
+}
+</script>

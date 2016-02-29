@@ -1,0 +1,27 @@
+<div class="form-group row">
+	<%
+		if(_title && _title.trim() != "") {
+		%>
+			<label class="col-sm-5 col-xs-5 col-md-5 control-label"><%=_title%></label>
+			<div class="col-sm-7 col-xs-7 col-md-7 ">
+		<%
+		}else {
+			%>
+			<div class="col-sm-12 col-xs-12 col-md-12">
+			<%
+		}
+	%>
+	
+		<%
+		var _dArray = _descriptions.split("\n");
+		var _vArray = _values.split("\n");
+		for(var i=0;i<_dArray.length;i++){
+		if(_dArray[i]&&(_vArray[i]==""||_vArray[i])&&_dArray[i].trim()!=""){
+		%>
+		<label class="radio-inline">
+			<input type="radio" <%=_disabled%> <%=_readonly%> <%if(i==0 && _required=='true'){%> required <%}%>
+			name="<%=_name%>" value="<%=_vArray[i].trim()%>" <%if(_defaultValue.trim()==_vArray[i].trim()){%>checked="checked"<%}%>> <%=_dArray[i].trim()%>
+		</label>
+		<%}}%>
+	</div>
+</div>

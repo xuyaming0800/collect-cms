@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://code.alibabatech.com/schema/dubbo
+	http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+
+	<!-- 提供方应用信息，用于计算依赖关系 -->
+<!-- 	<dubbo:application name="cc_core" /> -->
+
+<!-- 	<dubbo:registry address="multicast://224.4.1.4:9999"/> -->
+	<!-- 使用zookeeper暴露服务地址 -->
+<!--     <dubbo:registry address="zookeeper://localhost:2181?backup=localhost:2182,localhost:2183" /> -->
+
+	<dubbo:consumer timeout="60000" />
+	<!-- 用dubbo协议在20880端口暴露服务 -->
+<!-- 	<dubbo:protocol name="dubbo" port="20890" /> -->
+
+	<!-- 声明需要暴露的服务接口 -->
+	<!-- 黑白名单管理service接口 -->
+	<dubbo:service interface="com.autonavi.cc.api.service.BlackWhiteListService"
+		ref="blackWhiteListService" />
+	<!-- 品类管理service接口 -->
+	<dubbo:service interface="com.autonavi.cc.api.service.CollectClassService"
+		ref="collectClassService" />
+	<!-- 项目管理service接口 -->
+	<dubbo:service interface="com.autonavi.cc.api.service.ProjectInfoService"
+		ref="projectInfoService" />
+	<!-- resourceService -->
+	<dubbo:service interface="com.autonavi.cc.api.service.ResourceService"
+		ref="resourceService" />
+	<!-- HTML页面接口 -->
+	<dubbo:service interface="com.autonavi.cc.api.service.HtmlPageInfoService"
+		ref="htmlPageInfoService" />
+	<!-- 组件详细接口 -->
+	<dubbo:service interface="com.autonavi.cc.api.service.DetailConfigService"
+		ref="detailConfigService" />
+	<!--客户中心工具api接口 -->
+	<dubbo:service interface="com.autonavi.cc.api.service.CCApiToolsService"
+		ref="cCApiToolsService" />
+	<!-- 项目管理service对外接口 -->
+	<dubbo:service interface="com.autonavi.cc.api.openapi.service.ProjectService"
+		ref="projectService" />
+	<!-- 公共接口 -->
+	<dubbo:service interface="com.autonavi.cc.api.service.CommonService"
+		ref="commonService" />
+</beans>

@@ -1,0 +1,11 @@
+{
+	"_nameSave":"savebutton",
+	"_titleSave":"保&nbsp;&nbsp;&nbsp;&nbsp;存",
+	"_typeSave":"submit",
+	"_styleSave":"btn-warning",
+	"_nameIndex":"indexbutton",
+	"_titleIndex":"回首页",
+	"_typeIndex":"button",
+	"_styleIndex":"btn-warning",
+	"_align":"text-center"
+}

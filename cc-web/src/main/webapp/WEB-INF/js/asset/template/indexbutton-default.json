@@ -1,0 +1,7 @@
+{
+	"_name":"indexbutton",
+	"_title":"返回",
+	"_type":"button",
+	"_style":"btn-warning",
+	"_align":"text-center"
+}

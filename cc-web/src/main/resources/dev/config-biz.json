@@ -1,0 +1,17 @@
+{	
+	"cas_host": {"value": "http://123.57.213.15:8080","comments":""},
+	"audit_host": {"value": "http://localhost:8080/cc-web","comments":""},
+	"get_project_leader_url": {"value": "http://123.57.213.15:8080/boss-web/openapi?serviceid=100500&roleCode=DC_admin&bsId=613664652492013568","comments":""},
+	"get_custom_url": {"value": "http://123.57.213.15:8080/boss-web/openapi?serviceid=100600&userType=3&accountType=3","comments":""},
+	"get_collectClassPrice_url": {"value": "http://123.57.213.15:9090/cc-finance-web/openapi?serviceid=999001","comments":""},
+	"openapi_decrypt_key": {"value": "1qaz2wsx3edc4rfv","comments":""},
+	"redis.pool.maxActive": {"value": "1024","comments":""},
+	"redis.pool.maxIdle": {"value": "200","comments":""},
+	"redis.pool.maxWait": {"value": "1000","comments":""},
+	"redis.pool.testOnBorrow": {"value": "true","comments":""},
+	"redis.ip": {"value": "123.57.213.13","comments":""},
+	"redis.port": {"value": "6379","comments":""},
+	"redis.timeout": {"value": "5000","comments":""},
+	"redis.password": {"value": "aA111111","comments":""}
+	
+}

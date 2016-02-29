@@ -1,0 +1,58 @@
+{
+    "get_project_leader_url": {
+        "value": "http://182.92.184.70:8080/boss-web/openapi?serviceid=100500&roleCode=project_leader&bsId=658546320826433536",
+        "comments": ""
+    },
+    "redis.timeout": {
+        "value": "5000",
+        "comments": ""
+    },
+    "redis.pool.testOnBorrow": {
+        "value": "true",
+        "comments": ""
+    },
+    "redis.pool.maxIdle": {
+        "value": "200",
+        "comments": ""
+    },
+    "cas_host": {
+        "value": "http://182.92.184.70:8080",
+        "comments": ""
+    },
+    "openapi_decrypt_key": {
+        "value": "1qaz2wsx3edc4rfv",
+        "comments": ""
+    },
+    "redis.pool.maxActive": {
+        "value": "1024",
+        "comments": ""
+    },
+    "redis.ip": {
+        "value": "10.171.53.13",
+        "comments": ""
+    },
+    "audit_host": {
+        "value": "http://123.56.44.160:10080/cc-web",
+        "comments": ""
+    },
+    "get_collectClassPrice_url": {
+        "value": "http://182.92.184.70:9090/cc-finance-web/openapi?serviceid=999001",
+        "comments": ""
+    },
+    "redis.port": {
+        "value": "6379",
+        "comments": ""
+    },
+    "redis.pool.maxWait": {
+        "value": "1000",
+        "comments": ""
+    },
+    "redis.password": {
+        "value": "aA111111",
+        "comments": ""
+    },
+    "get_custom_url": {
+        "value": "http://182.92.184.70:8080/boss-web/openapi?serviceid=100600&userType=3&accountType=3",
+        "comments": ""
+    }
+}

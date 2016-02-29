@@ -1,0 +1,7 @@
+{
+	"_name":"savebutton",
+	"_title":"保存",
+	"_type":"submit",
+	"_style":"btn-warning",
+	"_align":"text-center"
+}

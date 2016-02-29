@@ -1,0 +1,34 @@
+<div class="text-center">
+<%
+var occupy = 12/_latticeCellNum;
+var _requiredArray =  _required.split("\n");
+var _nArray = _name.split("\n");
+var _gpsArray = _gpsType.split("\n");
+var _eArray = _explain.split("\n");
+var _shapeArray = _shape.split("\n");
+var _imgSizeArray=_imgSize.split("\n");
+var _repeatArray = _repeat.split("\n");
+var _distanceArray = _repeatDistance.split("\n");
+for(var i=0;i<_latticeCellNum;i++){
+var j = i <= _shapeArray.length - 1? i : _shapeArray.length - 1;
+var k = i <= _imgSizeArray.length-1? i: _imgSizeArray.length-1;
+var l = i <= _repeatArray.length-1? i: _repeatArray.length-1;
+var m = i <= _distanceArray.length-1? i: _distanceArray.length-1;
+console.log("_shapeArray[i].trim()="+_shapeArray[j].trim());
+%>
+	<div class="col-xs-<%=occupy%> col-sm-<%=occupy%> col-md-<%=occupy%> cameraInfo <%=_requiredArray[i].trim()%> <%if(_shapeArray[j].trim()=='1'){%>shape<%}%> <%if(_repeatArray[l].trim()=='1'){%>repeatCheck<%}%>" >
+       <button type="button" class="btn btn-default btn-lg " style="font-size:<%=_fontSize%>pt;padding:<%=_padding%>px;border:0px;width:57px;height:57px;opacity:0.4;" >
+           <span class="glyphicon glyphicon-camera" aria-hidden="true"></span>
+       </button>
+       <img class="img-camera" src="" name="<%=_nArray[i].trim()%>" id="img<%=parseInt(_id)+i%>" index="<%=parseInt(_id)+i%>" gpsType="<%=_gpsArray[i].trim()%>" imgSize="<%=_imgSizeArray[k].trim()%>" radius="<%=_distanceArray[m].trim()%>" style="display:none; "/>
+       <p>
+         <%=_eArray[i].trim()%>
+       </p>
+       <p style="display:none">
+           <span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>
+           <span class="success"><%=_successMgs%></span>
+           <span class="fail"><%=_failMgs%></span>
+       </p>
+   </div>
+<%}%>
+</div> 

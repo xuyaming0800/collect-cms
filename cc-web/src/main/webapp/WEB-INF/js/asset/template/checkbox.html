@@ -1,0 +1,29 @@
+<div class="form-group ">
+	<%
+		if(_title && _title.trim() != "") {
+		%>
+			<label class="col-sm-5 col-xs-5 col-md-5 control-label"><%=_title%></label>
+			<div class="col-sm-7 col-xs-7 col-md-7 ">
+		<%
+		}else {
+			%>
+			<div class="col-sm-12 col-xs-12 col-md-12">
+			<%
+		}
+	%>
+	    <%
+	    var i=0;
+		var _dArray = _checkTitle.split("\n");
+		var _vArray = _checkValue.split("\n");
+		var _defaultArray=_defaultChecked.split("\n");
+		for(i=0;i<_dArray.length;i++){
+		if(_dArray[i]&&(_vArray[i]==""||_vArray[i])&&_dArray[i].trim()!=""){
+		%>
+		<label class="checkbox-inline">
+			<input type="checkbox" <%=_disabled%> <%=_readonly%> <%if(i==0 && _minlength>0){%> required minlength="<%=_minlength%>" <%}%>
+			name="<%=_name%>" id="<%=_id%><%=i+1%>" value="<%=_vArray[i].trim()%>" <%for(var j in _defaultArray ){
+			if(_defaultArray[j].trim()!=""&&_defaultArray[j].trim()==_vArray[i].trim()){%>checked="checked"<%break;}}%>> <%=_dArray[i].trim()%>
+		</label>
+		<%}}%>
+	</div>
+</div>

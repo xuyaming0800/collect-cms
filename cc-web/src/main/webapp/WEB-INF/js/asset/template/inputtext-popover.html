@@ -1,0 +1,45 @@
+	<div class="form-group">
+		<label for="_id">ID</label> <input type="text" class="form-control"
+			 name="_id" value="<%=_id%>">
+	</div>
+	<div class="form-group">
+		<label for="_name">Name</label> <input type="text"
+			class="form-control"  name="_name" value="<%=_name%>">
+	</div>
+	<div class="form-group">
+		<label for="_title">显示名</label> <input type="text"
+			class="form-control" name="_title" value="<%=_title%>">
+	</div>
+	<div class="form-group">
+		<label for="_placeholder">占位符</label> <input type="text"
+			class="form-control" name="_placeholder"
+			value="<%=_placeholder%>">
+	</div>
+	<div class="form-group">
+		<label for="_type">类型</label> <select class="form-control" 
+			name="_type">
+			<option value="text" <% if(_type=="text"){%> selected="selected" <%}%>>text</option>
+			<option value="password" <% if(_type=="password"){%> selected="selected" <%}%>>password</option>
+			<option value="email" <% if(_type=="email"){%> selected="selected" <%}%>>email</option>
+			<option value="datetime" <% if(_type=="datetime"){%> selected="selected" <%}%>>datetime</option>
+			<option value="datetime-local" <% if(_type=="datetime-local"){%> selected="selected" <%}%>>datetime-local</option>
+			<option value="date" <% if(_type=="date"){%> selected="selected" <%}%>>date</option>
+			<option value="month" <% if(_type=="month"){%> selected="selected" <%}%>>month</option>
+			<option value="time" <% if(_type=="time"){%> selected="selected" <%}%>>time</option>
+			<option value="week" <% if(_type=="week"){%> selected="selected" <%}%>>week</option>
+			<option value="number" <% if(_type=="number"){%> selected="selected" <%}%>>number</option>
+			<option value="url" <% if(_type=="url"){%> selected="selected" <%}%>>url</option>
+			<option value="search" <% if(_type=="search"){%> selected="selected" <%}%>>search</option>
+			<option value="tel" <% if(_type=="tel"){%> selected="selected" <%}%>>tel</option>
+			<option value="color" <% if(_type=="color"){%> selected="selected" <%}%>>color</option>
+		</select>
+	</div>
+	<div class="checkbox">
+		<label><input type="checkbox"  name="_readonly" value="readonly" <% if(_readonly=="readonly"){%> checked="checked" <%}%>/>Readonly</label>
+	</div>
+	<div class="checkbox">
+		<label><input type="checkbox"  name="_disabled" value="disabled" <% if(_disabled=="disabled"){%> checked="checked" <%}%>/>Disabled</label>
+	</div>
+	<div class="checkbox">
+		<label><input type="checkbox" name="_required" value="true" <% if(_required=="true"){%> checked="checked" <%}%> > 必填</label>
+	</div>

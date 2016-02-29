@@ -1,0 +1,140 @@
+
+<div class="form-group">
+	<div class="col-sm-5">
+		<label  class="control-label">显示名</label>
+	</div>
+	<div class="col-sm-5">
+		<label  class="control-label">链接地址</label>
+	</div>
+	<div class="col-sm-2">
+		<i class="glyphicon glyphicon-plus"  id="addLink"></i>
+	</div>
+</div>
+<div id="links">
+</div>
+
+<div class="form-group">
+	<label for="_name" class="col-sm-2 control-label">Name</label>
+	<div class="col-sm-10">
+		<input type="text" class="form-control" id="_name" name="_name"
+			value="<%if(_name){%><%=_name%><%}%>"
+			placeholder="Name(针对所有href使用相同的名字)">
+	</div>
+</div>
+<div class="form-group">
+	<label for="_align" class="col-sm-2 control-label">对齐</label>
+	<div class="col-sm-10">
+		<select class="form-control" id="_align" name="_align">
+			<option value="text-left" <%if(_align == "text-left"){%> selected <%}%>>左</option>
+			<option value="text-center" <%if(_align == "text-center"){%> selected <%}%>>中</option>
+			<option value="text-right" <%if(_align == "text-right"){%> selected <%}%>>右</option>
+		</select>
+	</div>
+</div>
+<script type="text/javascript">
+$(function() {
+	 $("#addLink").click(function() {
+	 	addLinkLine("","","");
+	 });
+});
+//页面初始化操作---start
+var options = new Array();//下拉列表内容对象
+var optionFlag = false;//初始化标识 初始化成功 为true
+initSelectContent();
+var linkNames = "<%=_linkNames%>";
+var urls = "<%=_urls%>";
+
+var _lArray = linkNames.split(",");
+ var _uArray = urls.split(",");
+ for(var i=0;i<_lArray.length;i++) {
+	 addLinkLine(_lArray[i],_uArray[i]);
+ }
+ //页面初始化操作---end
+ //初始化下拉列表内容--start
+ function  initSelectContent() {
+	var ownerId = $("#ownerId").val();
+	var customId = $("#customId").val();
+	var collectClassParentId = $("#collectClassParentId").val();
+	var jsonData = {"ownerId":ownerId,"customId":customId,"collectClassParentId":collectClassParentId};
+	$.ajax({ 
+	       type:"POST",
+	       url:contextPath+"/project/queryCollectClassChild.html",
+	       dataType:"json",
+	       data:jsonData,
+	        async: false,
+	       error:function(data) {
+	       	alert("系统异常："+data.status);
+	       },
+	       success:function(data){ 
+	       	if(data.success == true) {
+	       		optionFlag = true;
+	       		var info = data.info;
+	       		$.each(info,function(i,n){
+	       			options.push(n);
+	       			//selectObj.append(option);
+	       		});
+	       	}else  {
+	       		
+	       	}
+	      }
+	});
+}
+ //初始化下拉列表内容--end
+ //添加行---start
+//var count = 0;
+function addLinkLine(linkName,url) {
+	var links = $("#links");
+	var divGroup = $("<div class=\"form-group\"></div>");
+	var divName = $("<div class=\"col-sm-5\"></div>");
+	var divUrl = $("<div class=\"col-sm-5\"></div>");
+	var divDel = $("<div class=\"col-sm-2\"></div>");
+	//var inputName = $("<input type=\"text\" class=\"form-control\" id=\"_linkName"+count+"\" name=\"_linkNames\" value=\"\" placeholder=\"显示名\">");
+	var inputName = $("<input type=\"text\" class=\"form-control\"  name=\"_linkNames\" value=\"\" placeholder=\"显示名\">");
+	inputName.val(linkName);
+	//var selectUrl = $("<select  class=\"form-control\" id=\"_url"+count+"\" name=\"_urls\"></select>");
+	var selectUrl = $("<select  class=\"form-control\" name=\"_urls\"></select>");
+	//初始化下拉框
+	initSelect(selectUrl,url);
+
+	var liDel = $("<i class=\"glyphicon glyphicon-trash\"  ></i>");
+	divName.append(inputName);
+	divUrl.append(selectUrl);
+	divDel.append(liDel);
+	divGroup.append(divName);
+	divGroup.append(divUrl);
+	divGroup.append(divDel);
+	links.append(divGroup);
+	
+	delBindClick(liDel);
+	//count++;
+}
+ //添加行---end
+ //初始化下拉列表
+function initSelect(selectObj,value) {
+	if(optionFlag) {
+		for(var i = 0; i < options.length; i++) {
+			var n = options[i];
+			var option = $("<option value=\"'"+n.ownerId+"'##'"+n.collectClassParentId+"'##'"+n.id+"'##'"+n.versionNo+"'##'"+n.collectCount+"'\" >"+n.collectClassName+"</option>");
+			selectObj.append(option);
+		}
+		selectObj.val(value);
+	}else {
+		/**
+		//如果方法initSelectContent()为设置为async: false,请打开此注释
+		callInitSelect(selectObj,value);
+		**/
+	}
+}
+//绑定删除按钮
+function delBindClick(obj) {
+	obj.click(function() {
+		obj.parent().parent().remove();
+	});
+}
+
+/* function callInitSelect(selectObj,value) {
+	setTimeout(function(){ 
+			initSelect(selectObj,value);
+		},2000); 
+} */
+</script>

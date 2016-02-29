@@ -1,0 +1,47 @@
+{
+    "dataSources": {
+        "1": {
+            "props": {
+                "strategyName": "rr",
+                "realDss": [
+                    "c3p0DataSource1"
+                ]
+            }
+        }
+    },
+    "shardIndex": 1,
+    "indexTableMap": {
+        "cc_custom_id_index": [
+            {
+                "name": "custom_id",
+                "columnType": "string",
+                "columnName": "custom_id",
+                "length": 20
+            }
+        ]
+    },
+    "segmentTables": [],
+    "realDataSources": {
+        "c3p0DataSource1": {
+            "beanClass": "com.mchange.v2.c3p0.ComboPooledDataSource",
+            "props": {
+                "acquireRetryAttempts": "30",
+                "acquireRetryDelay": "100",
+                "maxIdleTime": "3",
+                "unreturnedConnectionTimeout":"300",
+                "testConnectionOnCheckout": "false",
+                "breakAfterAcquireFailure": "false",
+                "password": "root",
+                "acquireIncrement": "100",
+                "idleConnectionTestPeriod": "60",
+                "maxPoolSize": "4",
+                "maxStatements": "10",
+                "minPoolSize": "1",
+                "driverClass": "com.mysql.jdbc.Driver",
+                "initialPoolSize": "1",
+                "jdbcUrl": "jdbc:mysql://localhost:3306/custom_dev?rewriteBatchedStatements=true",
+                "user": "root"
+            }
+        }
+    }
+}

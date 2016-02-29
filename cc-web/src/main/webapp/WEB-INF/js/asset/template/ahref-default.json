@@ -1,0 +1,8 @@
+{
+	"_name":"url",
+	"_url":"baidu.com",
+	"_linkName":"我是超链接",
+	"_align":"text-left",
+	"_linkNames":["超级链接"],
+	"_urls":["value"]
+}

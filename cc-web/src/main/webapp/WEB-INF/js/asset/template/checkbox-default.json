@@ -1,0 +1,11 @@
+{
+	"_id":"checkbox",
+	"_name":"checkbox",
+	"_title":"复选",
+	"_disabled":"",
+	"_readonly":"",
+	"_checkTitle":"选项",
+	"_checkValue":"1",
+	"_defaultChecked":"1\n2",
+	"_minlength":0
+}

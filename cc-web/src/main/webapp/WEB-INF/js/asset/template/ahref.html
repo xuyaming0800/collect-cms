@@ -1,0 +1,74 @@
+<div class="<%=_align%>">
+	 
+	<%
+		var mName = "m_"+(new Date().getTime());
+		var _lArray = _linkNames;
+		var _uArray = _urls;
+		if(_linkNames  instanceof  Array) {
+			for(var i=0;i<_lArray.length;i++){
+			if(_lArray[i]&&(_uArray[i]==""||_lArray[i])&&_uArray[i].trim()!=""){
+					if(i == 0){
+					%>
+					<div class="row">
+				<%						
+					}%>
+					<a class="btn  btn-warning"  style="display:inline-block; text-align:center; padding-top:5px; padding-bottom:5px; float:left; margin-bottom:10px;  width:45%; margin-left:2.5%;margin-right:2.5%; color:#FFF;  border-radius:3px; text-decoration:none;" name="<%=_name%>" href="javascript:<%=mName%>(<%=_uArray[i].replace(new RegExp(/(##)/g),',')%>)"><%=_lArray[i].trim()%></a> 
+					<%
+					
+					if(i != 0 && (i+1)%2 == 0 && i != _lArray.length - 1) {
+						%>
+					</div>
+					<div class="row">
+						<%					
+					}else	if(i == _lArray.length - 1) {
+						%>
+						</div>
+						<%
+					}				
+				%>
+      
+			
+	<%}}} else {%>
+		 <div class="row">
+				<a class="btn  btn-warning"  style="display:inline-block; text-align:center; padding-top:5px; padding-bottom:5px; float:left; margin-bottom:10px;  width:45%; margin-left:2.5%;margin-right:2.5%; color:#FFF;  border-radius:3px; text-decoration:none;" name="<%=_name%>" href="javascript:<%=mName%>(<%=_uArray.replace(new RegExp(/(##)/g),',')%>)"><%=_lArray.trim()%></a>
+          </div>
+          
+			
+	<%}%>
+	<script type="text/javascript">
+	    var <%=mName%>_lock=true;
+		function <%=mName%>(ownerId,collectClassParentId,collectClassId,versionNo,collectCount){
+		   if(<%=mName%>_lock){
+		    <%=mName%>_lock=false;
+		    setTimeout(function(){<%=mName%>_lock=true;},3000);
+		    var isBack=false;
+			if(data_ != undefined) {
+				data_["ownerId"] = ownerId;
+				data_["collectClassParentId"] = collectClassParentId;
+				data_["collectClassId"] = collectClassId;
+				data_["event"] = collectClassId+"_click";
+				data_["uuid"] = null;
+				data_["versionNo"]=versionNo;
+				data_["maxCount"]=collectCount;
+				delete data_["entranceStatus"];
+				isBack=check.checkGoBack(data_);
+				if(!isBack){
+				  doForward(data_);
+				}
+				
+			}else {
+				isBack=check.checkGoBack({ownerId:ownerId,collectClassParentId:collectClassParentId,collectClassId:collectClassId,event:collectClassId+"_click",uuid:null,versionNo:versionNo,maxCount:collectCount});
+				if(!isBack){
+				  doForward({ownerId:+ownerId,collectClassParentId:collectClassParentId,collectClassId:collectClassId,event:collectClassId+"_click",uuid:null,versionNo:versionNo,maxCount:collectCount});
+				}
+				
+			}
+		  }else{
+		    //alert("请不要过快点击！");
+		  }
+		}
+	</script>
+      
+  
+    
+</div>

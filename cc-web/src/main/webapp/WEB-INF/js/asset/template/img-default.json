@@ -1,0 +1,18 @@
+{
+	"_latticeCellNum":"1",
+	"_required":"required",
+	"_fontSize":"36",
+	"_padding":"1",
+	"_name":"PZ",
+	"_id":"1",
+	"_index":"1",
+	"_gpsType":"TypeHighAccuracy",
+	"_explain":"拍照",
+	"_callbackMsg":"拍照成功",
+	"_successMgs":"定位成功",
+	"_failMgs":"定位失败",
+	"_shape":"",
+	"_imgSize":"",
+	"_repeat":"",
+	"_repeatDistance":""
+}

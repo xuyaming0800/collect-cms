@@ -1,0 +1,10 @@
+{
+	"_title":"单选按钮",
+	"_name":"name",
+	"_descriptions":"单选描述",
+	"_disabled":"",
+	"_readonly":"",
+	"_values":"value",
+	"_defaultValue":"",
+	"_required":false
+}

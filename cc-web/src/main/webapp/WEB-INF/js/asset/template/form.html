@@ -1,0 +1,46 @@
+
+	<div class="container-fluid">
+	    <div class="col-md-12 deletezone" >
+				<div class="text-center" style="background-color:#eee" >
+				<span class="glyphicon glyphicon-trash " style="font-size:50px;margin-top:20px"></span>
+				 <h5 class="text-center">拖拽到此处删除左侧元素</h5>
+				</div>
+		</div>
+		<div class="row starter-template">
+			<div class="col-md-6">
+				<h2>H5表单  <button type="button" id="saveJson" class="btn btn-primary" disabled="disabled">保存</button><!-- <button type="button" id="submitJson" class="btn btn-success">提交</button> --></h2>
+				<hr/>
+				<div id="build">
+				  <form id="target" class="form-horizontal">
+				    <div class="container-fluid">
+					  <div id="dropzone"></div>
+					</div>
+				  </form>
+				</div>
+			</div>
+			<div class="col-md-6">
+				<h2>拖拽下面的组件到左侧</h2>
+				<hr/>			
+				<div>
+				  <!-- Nav tabs -->
+				  <ul class="nav nav-tabs" role="tablist">
+				  	<% for(var i=0; i<supplies.length; i++) {%>
+				  		<li role="presentation" class="<%=supplies[i].active%>"><a href="#<%= supplies[i].id %>" aria-controls="<%= supplies[i].id %>" role="tab" data-toggle="tab"><%= supplies[i].name %></a></li>
+					<% } %>
+				  </ul>
+				  <!-- Tab panes -->
+				  <div class="tab-content">
+				  	<% for(var i=0; i<supplies.length; i++) {%>
+						<div role="tabpanel" class="tab-pane drag <%=supplies[i].active%>" id="<%= supplies[i].id %>"></div>
+					<% } %>
+				  </div>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-12 deletezone" >
+				<div class="text-center" style="background-color:#eee" >
+				<span class="glyphicon glyphicon-trash " style="font-size:50px;margin-top:20px"></span>
+				 <h5 class="text-center">拖拽到此处删除左侧元素</h5>
+				</div>
+		</div>
+	</div>

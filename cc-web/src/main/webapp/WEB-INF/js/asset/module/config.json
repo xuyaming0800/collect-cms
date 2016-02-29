@@ -1,0 +1,60 @@
+[
+	{
+		"id":"build_input",
+		"name":"输入",
+		"active":"active",
+		"children" :[
+			"inputtext",
+			"hidden",
+			"text"
+		]
+	},
+	{
+		"id":"build_rc",
+		"active":"",
+		"name":"单选/复选",
+		"children" :[
+			"radio",
+			"checkbox"
+		]
+	},
+	{
+		"id":"build_select",
+		"active":"",
+		"name":"选择"
+	},
+	{
+		"id":"build_button",
+		"active":"",
+		"name":"按钮",
+		"children" :[
+		    "button",
+			"ahref",
+			"savebutton",
+			"indexbutton",
+			"saveIndexbtn"
+		]
+	},
+	{
+		"id":"build_list",
+		"active":"",
+		"name":"列表"
+	},
+	{
+		"id":"build_special",
+		"active":"",
+		"name":"特殊",
+		"children" :[
+ 		    "img"
+ 		]
+	},
+	{
+		"id":"build_other",
+		"active":"",
+		"name":"其他",
+		"children" :[
+ 		    "nav",
+ 		    "hr"
+ 		]
+	}
+]

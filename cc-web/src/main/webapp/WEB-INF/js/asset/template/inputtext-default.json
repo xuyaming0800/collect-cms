@@ -1,0 +1,10 @@
+{
+	"_id":"tmp",
+	"_name":"tmp",
+	"_type":"text",
+	"_title":"文本框",
+	"_placeholder":"文本框",
+	"_disabled":"",
+	"_readonly":"",
+	"_required":false
+}

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://code.alibabatech.com/schema/dubbo
+	http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+	
+	<dubbo:application name="cc-web" />
+
+	<!-- 使用multicast广播注册中心暴露发现服务地址 -->
+<!-- 	<dubbo:registry address="multicast://224.4.1.4:9999" /> -->
+	<dubbo:registry address="zookeeper://localhost:2181" />
+    <dubbo:consumer timeout="600000"/> 
+    
+<!--     <dubbo:protocol name="dubbo" port="20890" /> -->
+    <!-- 黑白名单管理接口 -->
+    <dubbo:reference id="blackWhiteListService"
+		interface="com.autonavi.cc.api.service.BlackWhiteListService"></dubbo:reference>
+     <!-- 品类管理接口 -->
+    <dubbo:reference id="collectClassService"
+		interface="com.autonavi.cc.api.service.CollectClassService"></dubbo:reference>
+    <!-- 项目管理接口 -->
+    <dubbo:reference id="projectInfoService"
+		interface="com.autonavi.cc.api.service.ProjectInfoService"></dubbo:reference>
+    <!-- 资源权限接口 -->
+    <dubbo:reference id="resourceService"
+		interface="com.autonavi.cc.api.service.ResourceService"></dubbo:reference>
+	<!-- HTML页面接口 -->
+	<dubbo:reference id="htmlPageInfoService"
+		interface="com.autonavi.cc.api.service.HtmlPageInfoService"></dubbo:reference>
+	<!-- 组件详细接口 -->
+	<dubbo:reference id="detailConfigService"
+		interface="com.autonavi.cc.api.service.DetailConfigService"></dubbo:reference>
+	<!--客户中心工具api接口 -->
+	<dubbo:reference id="cCApiToolsService"
+		interface="com.autonavi.cc.api.service.CCApiToolsService"></dubbo:reference>
+		
+	 <!-- 项目管理对外接口 -->
+    <dubbo:reference id="projectService"
+		interface="com.autonavi.cc.api.openapi.service.ProjectService"></dubbo:reference>
+		
+	<!--公共接口 -->
+	<dubbo:reference id="commonService"
+		interface="com.autonavi.cc.api.service.CommonService"></dubbo:reference>
+</beans>

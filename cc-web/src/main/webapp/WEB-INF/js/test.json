@@ -1,0 +1,14 @@
+[
+    {
+        "type": "inputtext",
+        "jsonText": {
+            "_id": "tmp",
+            "_name": "tmp",
+            "_type": "text",
+            "_title": "你大爷",
+            "_placeholder": "文本框",
+            "_disabled": "",
+            "_readonly": ""
+        }
+    }
+]

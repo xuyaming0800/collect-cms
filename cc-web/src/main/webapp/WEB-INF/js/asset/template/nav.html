@@ -1,0 +1,35 @@
+<div class="form-group" style=" margin-top:40px;">
+<%
+var mName = "m_"+(new Date().getTime());
+%>
+	<nav class="navbar navbar-default " style="min-height:50px; line-height:50px;background-image: url();background-color:<%=_bgcolor%>;border-color:<%=_bgcolor%>;" id="navbarFixedTop">
+	    <div class="text-center" style="font-size:16pt;color:<%=_fontcolor%>;">
+	    	<a href="javascript:<%=mName%>_goBack(this);" style="color:<%=_fontcolor%>;">
+	    		<span class="glyphicon glyphicon-chevron-left pull-left" aria-hidden="true" style="margin-top:12px; margin-left:12px; "></span>
+	    	</a>
+	    	<%=_name.trim()%>
+	    </div>
+	</nav>
+	<script type="text/javascript">
+	    var <%=mName%>_nav_lock=true;
+		function <%=mName%>_goBack(element) {
+		  if(<%=mName%>_nav_lock){
+		    <%=mName%>_nav_lock=false;
+		    setTimeout(function(){<%=mName%>_nav_lock=true;},3000);
+		    var ele=$(element).parents("div[data-role='page']");
+		 	var ownerId = ele.find("#ownerId").val();
+		 	var collectClassParentId =ele.find("#collectClassParentId").val();
+		 	var collectClassId = ele.find("#collectClassId").val();
+		 	if(data_ != undefined) {
+		 	  var data_temp=$.extend({},data_,{ownerId:ownerId,collectClassParentId:collectClassParentId,collectClassId:collectClassId,event:'back',input:true});
+		 	  delete data_temp["entranceStatus"];
+		 	  doForward(data_temp);	 	  
+		 	}else{
+		 	  doForward({ownerId:ownerId,collectClassParentId:collectClassParentId,collectClassId:collectClassId,event:'back',input:true});
+		 	}
+		  }else{
+		    //alert("请不要过快点击!")
+		  }
+		}
+	</script>
+</div>

@@ -1,0 +1,47 @@
+<div class="form-group">
+	<label for="_name" class="col-sm-2 control-label">Name</label>
+	<div class="col-sm-10">
+		<textarea rows="3" id="_name" name="_name" placeholder="Name"><%if(_name){%><%=_name%><%}%></textarea>
+		<p>
+			这是针对每个图片下方的Name，请使用
+			<kbd>Enter</kbd>
+			进行分隔。
+		</p>
+	</div>
+</div>
+<div class="form-group">
+	<label for="_explain" class="col-sm-2 control-label">说明</label>
+	<div class="col-sm-10">
+		<textarea rows="3" id="_explain" name="_explain" placeholder="说明"><%if(_explain){%><%=_explain%><%}%></textarea>
+		<p>
+			这是针对每个图片下方的说明，请使用
+			<kbd>Enter</kbd>
+			进行分隔。
+		</p>
+	</div>
+</div>
+<div class="form-group">
+	<label for="_callbackMsg" class="col-sm-2 control-label">回调消息</label>
+	<div class="col-sm-10">
+		<input type="text" class="form-control" id="_callbackMsg"
+			name="_callbackMsg"
+			value="<%if(_callbackMsg){%><%=_callbackMsg%><%}%>"
+			placeholder="回调消息">
+	</div>
+</div>
+<div class="form-group">
+	<label for="_latticeCellNum" class="col-sm-2 control-label">个数</label>
+	<div class="col-sm-10">
+		<select class="form-control" id="_latticeCellNum"
+			name="_latticeCellNum">
+			<option value="1"<%if(_latticeCellNum == "1"){%> selected
+				<%}%>>1</option>
+			<option value="2"<%if(_latticeCellNum == "2"){%> selected
+				<%}%>>2</option>
+			<option value="3"<%if(_latticeCellNum == "3"){%> selected
+				<%}%>>3</option>
+			<option value="4"<%if(_latticeCellNum == "4"){%> selected
+				<%}%>>4</option>
+		</select>
+	</div>
+</div>

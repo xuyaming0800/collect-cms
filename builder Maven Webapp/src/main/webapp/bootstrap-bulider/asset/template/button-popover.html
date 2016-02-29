@@ -1,0 +1,48 @@
+<div class="form-group">
+	<label for="_title" class="col-sm-2 control-label">显示名</label>
+	<div class="col-sm-10">
+		<input type="text" class="form-control" id="_title" name="_title"
+			value="<%if(_title){%><%=_title%><%}%>" placeholder="显示名">
+	</div>
+</div>
+<div class="form-group">
+	<label for="_name" class="col-sm-2 control-label">Name</label>
+	<div class="col-sm-10">
+		<input type="text" class="form-control" id="_name" name="_name"
+			value="<%if(_name){%><%=_name%><%}%>" placeholder="Name">
+	</div>
+</div>
+<div class="form-group">
+	<label for="_type" class="col-sm-2 control-label">类型</label>
+	<div class="col-sm-10">
+		<select class="form-control" id="_type" name="_type">
+			<option value="button" <%if(_type == "button"){%> selected <%}%>>button</option>
+			<option value="submit" <%if(_type == "submit"){%> selected <%}%>>submit</option>
+			<option value="reset" <%if(_type == "reset"){%> selected <%}%>>reset</option>
+		</select>
+	</div>
+</div>
+<div class="form-group">
+	<label for="_style" class="col-sm-2 control-label">样式</label>
+	<div class="col-sm-10">
+		<select class="form-control" id="_style" name="_style">
+			<option value="btn-default" <%if(_style == "btn-default"){%> selected <%}%>>btn-default</option>
+			<option value="btn-primary" <%if(_style == "btn-primary"){%> selected <%}%>>btn-primary</option>
+			<option value="btn-success" <%if(_style == "btn-success"){%> selected <%}%>>btn-success</option>
+			<option value="btn-info" <%if(_style == "btn-info"){%> selected <%}%>>btn-info</option>
+			<option value="btn-warning" <%if(_style == "btn-warning"){%> selected <%}%>>btn-warning</option>
+			<option value="btn-danger" <%if(_style == "btn-danger"){%> selected <%}%>>btn-danger</option>
+			<option value="btn-link" <%if(_style == "btn-link"){%> selected <%}%>>btn-link</option>
+		</select>
+	</div>
+</div>
+<div class="form-group">
+	<label for="_align" class="col-sm-2 control-label">对齐</label>
+	<div class="col-sm-10">
+		<select class="form-control" id="_align" name="_align">
+			<option value="text-left" <%if(_align == "text-left"){%> selected <%}%>>左</option>
+			<option value="text-center" <%if(_align == "text-center"){%> selected <%}%>>中</option>
+			<option value="text-right" <%if(_align == "text-right"){%> selected <%}%>>右</option>
+		</select>
+	</div>
+</div>

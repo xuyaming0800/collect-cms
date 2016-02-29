@@ -1,0 +1,54 @@
+<div class="form-group">
+	<label for="_title" class="col-sm-2 control-label">显示名</label>
+	<div class="col-sm-10">
+		<input type="text" class="form-control" id="_title" name="_title"
+			value="<%if(_title){%><%=_title%><%}%>" placeholder="显示名">
+	</div>
+</div>
+<div class="form-group">
+	<label for="_name" class="col-sm-2 control-label">Name</label>
+	<div class="col-sm-10">
+		<input type="text" class="form-control" id="_name" name="_name"
+			value="<%if(_name){%><%=_name%><%}%>"
+			placeholder="Name(针对所有radio使用相同的名字)">
+	</div>
+</div>
+<div class="form-group">
+	<label for="_descriptions" class="col-sm-2 control-label">描述</label>
+	<div class="col-sm-10">
+		<textarea id="_descriptions" name="_descriptions" class="form-control"
+			rows="3"><%if(_descriptions){%><%=_descriptions%><%}%></textarea>
+		<p>
+			这是针对每个radio的描述，请使用
+			<kbd>Enter</kbd>
+			进行分隔。
+		</p>
+	</div>
+</div>
+<div class="form-group">
+	<label for="_values" class="col-sm-2 control-label">值</label>
+	<div class="col-sm-10">
+		<textarea id="_values" name="_values" class="form-control" rows="3"><%if(_values){%><%=_values%><%}%></textarea>
+		<p>
+			这是针对每个radio的值，请使用
+			<kbd>Enter</kbd>
+			进行分隔。
+		</p>
+	</div>
+</div>
+<div class="form-group">
+	<label for="_defaultChecked" class="col-sm-2 control-label">默认选中</label>
+	<div class="col-sm-10">
+		<input type="text" class="form-control" id="_defaultValue" name="_defaultValue"
+			value="<%if(_defaultValue){%><%=_defaultValue%><%}%>">
+		<p>
+			这是针对radio默认选中的值
+		</p>
+	</div>
+</div>
+<div class="checkbox">
+		<label><input type="checkbox"  name="_readonly" value="readonly" <% if(_readonly=="readonly"){%> checked="checked" <%}%>/>Readonly</label>
+</div>
+<div class="checkbox">
+		<label><input type="checkbox"  name="_disabled" value="disabled" <% if(_disabled=="disabled"){%> checked="checked" <%}%>/>Disabled</label>
+</div>
